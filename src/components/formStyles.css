@@ -8,7 +8,7 @@ label{
     flex-direction: column;
     padding: 4rem 1rem;
     margin: auto;
-    max-width: 300px;
+    max-width: 30px;
 }
 
 form input, form textarea{
