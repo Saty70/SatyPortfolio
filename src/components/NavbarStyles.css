@@ -9,6 +9,8 @@
     z-index: 10;
 }
 
+
+
 .header-bg{
     background-color: rgba(0,0,0,0.85);
     transition: 0.5s;
@@ -32,7 +34,7 @@
     display : none;
 }
 
-@media screen and (max-width : 1040px){
+@media screen and (max-width : 780px){
     .nav-menu{
         flex-direction: column;
         justify-content: center;
@@ -45,6 +47,10 @@
         left:-100%;
         z-index: -3; 
         transition  : 0.3s;
+    }
+
+    .header h1{
+        font-size: larger;
     }
 
     .nav-menu.active{
@@ -60,7 +66,8 @@
     }
 
     .hamburger{
-        display : initial   ;
+        display: initial;
+        padding: auto;
     }
     
 }

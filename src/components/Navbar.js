@@ -24,7 +24,7 @@ window.addEventListener("scroll",changeColor);
   return (
     <div className={color?"header header-bg":"header"}>
         <Link to = "/">
-        <h1>Saty</h1>
+        <h1><h1>Saty</h1></h1>
         </Link>
         <ul className = {click?"nav-menu active":"nav-menu"}>
             <li>
@@ -41,10 +41,7 @@ window.addEventListener("scroll",changeColor);
             </li>
         </ul>
         <div className = "hamburger" onClick = {handleClick}>
-            {click?(<FaTimes size ={20} style={{ color: "fff"}} />):(<FaBars size ={20} style={{ color: "fff"}} />)}
-            
-            
-
+            {click?(<FaTimes size ={60} style={{ color: "fff"}} />):(<FaBars size ={60} style={{ color: "fff"}} />)}
         </div>
     </div>
   )
