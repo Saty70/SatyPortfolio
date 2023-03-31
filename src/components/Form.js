@@ -65,7 +65,7 @@ const Form = () => {
             autoComplete="off"
             value={message}
             onChange={handleChange}/>
-            <button className="btn">Submit</button>
+            <button className="btn" type="submit">Submit</button>
         </form>
     </div>
   )
