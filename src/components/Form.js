@@ -35,9 +35,7 @@ const Form = () => {
   };
     return (
     <div className = "form">
-        <form 
-        action="https://formsubmit.co/satys321@gmail.com" method="POST"
-        onSubmit={handleSubmit}>
+        <form action="https://formsubmit.co/satys321@gmail.com" method="POST" onSubmit={handleSubmit}>
             <label>Your name</label>
             <input type="text"
             name="name"
