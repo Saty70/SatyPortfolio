@@ -2,8 +2,9 @@ import "./footerStyles.css"
 
 import React from 'react'
 import { NavLink } from "react-router-dom";
+import {Link} from "react-router-dom";
 
-import {FaHome, /*FaPhoneAlt,*/ FaMailBulk, FaGithub, FaInstagram, FaStackOverflow, FaTwitter, FaTwitch, FaLinkedinIn} from "react-icons/fa";
+import {FaHome, /*FaPhoneAlt,*/ FaMailBulk, FaGithub, FaInstagram, FaStackOverflow, FaTwitter, /*FaTwitch,*/ FaLinkedinIn} from "react-icons/fa";
 
 const footer = () => {
   return (
@@ -21,7 +22,7 @@ const footer = () => {
                     <h4><FaPhoneAlt size={20} style={{color:"#fff", marginRight: "2rem"}}/>000-9999-999</h4>
                 </div>*/}
                 <div className = "email">
-                    <h4><FaMailBulk size={25} style={{color:"#fff", marginRight: "2rem"}}/>hi@mailme.com</h4>
+                    <h4><FaMailBulk size={25} style={{color:"#fff", marginRight: "2rem"}}/><Link to = "/contact">Connect</Link></h4>
                 </div>
             </div>
             <div className="right">
@@ -52,9 +53,9 @@ const footer = () => {
                     <FaTwitter size={30} style={{color:"#fff", marginRight: "1rem"}}/>
                 </NavLink>
                 
-                <NavLink to = "https://www.twitch.tv/saty_10">
+                {/*<NavLink to = "https://www.twitch.tv/saty_10">
                     <FaTwitch size={30} style={{color:"#fff", marginRight: "1rem"}}/>
-                </NavLink>
+            </NavLink>*/}
                 
                 </div>
             </div>
