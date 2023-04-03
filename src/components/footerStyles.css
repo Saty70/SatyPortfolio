@@ -15,7 +15,7 @@ flex-wrap: wrap;
 .left{
 height: auto;
 flex : 1 1 70px;
-margin: 0px;
+margin: 20px;
 }
 
 .location{
