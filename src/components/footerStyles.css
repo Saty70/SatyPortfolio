@@ -30,6 +30,7 @@ grid-gap: 40px;
 }
 
 .right{
+    text-align: justify;
     height: 100%;
     max-width: 100%;
     display:flex;
@@ -38,6 +39,7 @@ grid-gap: 40px;
 }
 
 .social{
+    align-self: end;
     margin-top: 1rem;
 }
 

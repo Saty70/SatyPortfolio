@@ -12,7 +12,7 @@ const footer = () => {
         <div className="footer-container">
             <div className="left">
                 <div className="location">
-                    <FaHome size={50} style={{color:"#fff", marginRight: "2rem"}}/>
+                    <FaHome size={40} style={{color:"#fff", marginRight: "2rem"}}/>
                     <div>
                         <p>Outer Ring Rd, near JAIPUR GOLDEN HOSPITAL, Institutional Area, Sector 3, Rohini, Delhi, 110085</p>
                         <p>INDIA</p>
