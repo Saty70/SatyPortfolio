@@ -14,8 +14,8 @@ flex-wrap: wrap;
 
 .left{
 height: auto;
-flex : 1 1 70px;
-margin: 20px;
+flex : 1 1 300px;
+margin: 30px;
 }
 
 .location{
@@ -32,8 +32,8 @@ margin: 20px;
 .right{
     text-align: justify;
     height: auto;
-    flex: 1 1 70px;
-    margin: 20px;
+    flex: 1 1 300px;
+    margin: 30px;
 }
 
 .social{
