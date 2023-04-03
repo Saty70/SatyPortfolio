@@ -12,7 +12,7 @@ const footer = () => {
         <div className="footer-container">
             <div className="left">
                 <div className="location">
-                    <FaHome size={40} style={{color:"#fff", marginRight: "2rem"}}/>
+                    <FaHome size={30} style={{color:"#fff", marginRight: "2rem"}}/>
                     <div>
                         <p>Outer Ring Rd, near JAIPUR GOLDEN HOSPITAL, Institutional Area, Sector 3, Rohini, Delhi, 110085</p>
                         <p>INDIA</p>
@@ -22,7 +22,7 @@ const footer = () => {
                     <h4><FaPhoneAlt size={20} style={{color:"#fff", marginRight: "2rem"}}/>000-9999-999</h4>
                 </div>*/}
                 <div className = "email">
-                    <h4><FaMailBulk size={25} style={{color:"#fff", marginRight: "2rem"}}/><Link to = "/contact">Connect</Link></h4>
+                    <p><FaMailBulk size={30} style={{color:"#fff", marginRight: "1rem"}}/><Link to = "/contact"><b><u><i>Connect</i></u></b></Link></p>
                 </div>
             </div>
             <div className="right">

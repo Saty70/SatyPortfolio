@@ -18,6 +18,10 @@ flex : 1 1 300px;
 margin: 30px;
 }
 
+.left h4{
+    text-align: justify;
+}
+
 .location{
     text-align: justify;
     display: flex;
@@ -42,8 +46,8 @@ margin: 30px;
 }
 
 h4{
-    font-size: 1.2rem;
-    padding-bottom:0.7rem;
+    font-size: 1.5rem;
+    padding-bottom:0.5rem;
 }
 
 p{
