@@ -2,7 +2,7 @@ import "./HeroImg2Styles.css"
 
 import React, { Component } from 'react'
 
-import IntroImg from "../assets/carPaper.jpg"
+import IntroImg from "../assets/cumulus_18.jpg"
 
 class HeroImg2 extends Component {
   render(){
