@@ -1,16 +1,15 @@
 //import cat from "../assets/cat.jpg"
 import noteliness from "../assets/noteliness.jpg";
-//import catty from "../assets/crush.jpg"
-//import cat from "../assets/cat.jpg"
+import car from "../assets/car0.png";
 
 const ProjectCardData = [
-    /*{
-        imgsrc: cat,
-        title : "title 2",
-        text : "about the project2",
-        view : "https://www.instagram.com/saty.ikp/",
-        src : "https://github.com/Saty70"
-    },*/
+    {
+        imgsrc: car,
+        title : "Car wallpaper",
+        text : "My blender project",
+        view : "https://www.instagram.com/p/Cgm9Gt4PuhQmruvcf90gHG-HHoI8mk7wqNsn_o0/?igshid=YmMyMTA2M2Y=",
+        src : "https://www.instagram.com/saty.ikp/"
+    },
     {
         imgsrc: noteliness,
         title : "noteliness",

@@ -8,17 +8,19 @@
     margin :auto;
     display : grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 40px;
-    padding-bottom: 5 rem;
+    grid-gap: 20px;
+    padding-bottom: 5rem;
 }
 
 .project-card{
     background : #1a1919;
-    padding:0%1.2rem 1rem;
+    padding:0% 1.2rem 1rem;
 }
 
 .project-card img {
-    width :100%; 
+    padding-top: 5%;
+    width: 100%;
+    height: 45vh;
 }
 
 .project-title{
@@ -43,10 +45,16 @@
 }
 
 
-@media screen and (max-width :740px){
+@media screen and (max-width :840px){
     .project-container{
-        max-width: 90%;
+        max-width: 50%;
         margin: auto;
         grid-template-columns: 1fr;
+    }
+    
+    .project-card img {
+        padding-top: 5%;
+        width : 100%;
+        height:auto;
     }
 }

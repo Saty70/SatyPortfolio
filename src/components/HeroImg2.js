@@ -2,10 +2,15 @@ import "./HeroImg2Styles.css"
 
 import React, { Component } from 'react'
 
+import IntroImg from "../assets/carPaper.jpg"
+
 class HeroImg2 extends Component {
   render(){
     return (
       <div className ="hero-img">
+        <div className="mask">
+          <img className = "into-img" src= {IntroImg} alt="IntroImg"/>
+        </div>
           <div className = "heading">
               <h1>{this.props.heading}</h1>
               <p>{this.props.text}</p>
