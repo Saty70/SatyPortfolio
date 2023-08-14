@@ -1,4 +1,6 @@
-//import cat from "../assets/cat.jpg"
+/*import cat from "../assets/cat.jpg"*/
+import ele from "../assets/ele.jpg"
+import todo from "../assets/todo.jpg"
 import noteliness from "../assets/noteliness.jpg";
 import car from "../assets/car0.png";
 
@@ -16,6 +18,20 @@ const ProjectCardData = [
         text : "Instant class notes sharing app",
         view : "https://github.com/Saty-riasis/Noteliness",
         src : "https://github.com/Saty-riasis/Noteliness"
+    },
+    {
+        imgsrc: ele,
+        title : "Electricity bill calculator",
+        text : "⚡",
+        view : "https://elebill.vercel.app/",
+        src : "https://github.com/Saty70/JSGITHUB"
+    },
+    {
+        imgsrc: todo,
+        title : "ToDo List",
+        text : "Every day todo task list",
+        view : "https://todothetask.vercel.app/",
+        src : "https://github.com/Saty70/todo"
     },
     /*{
         imgsrc: cat,
