@@ -1,0 +1,42 @@
+.hero-img{
+    width:100%;
+    height:auto;
+    position:relative;
+}
+
+.into-img{
+    width: 100%;
+    height : 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    opacity: 100%;
+    
+}
+
+.heading{
+    position: absolute;
+    transform: translate(-50%,50%);
+    top:35%;
+    left:50%;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img h1{
+    font-size:2.4rem;
+}
+
+.hero-img p{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+@media screen and (max-width:640px){
+    .hero-img h1{
+        font-size:2rem;
+    }
+}
