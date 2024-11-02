@@ -1,0 +1,105 @@
+.quando-regular {
+    font-family: "Quando", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1{
+    height: 5rem;
+    font-size: 4rem;
+}
+
+h1,h2,h3,h4,h5,h6,p,label{
+
+    color: darkslategrey !important;
+}
+
+body{
+    font-family: Quando;
+    background: #e1eefa;
+    background-image: url('/static/images/Pattern-PNG-Transparent.png');
+    background-size: fill;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    /* background-color: #f4f4f4; */
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-brand{
+    font-size: x-large;
+    transition: ease-in-out 0.3s;
+}
+
+.navbar-brand:hover{
+    color: rgb(170, 202, 202);
+    transition: ease-in-out 0.3s;
+}
+
+.nav-link.active:hover{
+    color: rgb(170, 202, 202) !important; 
+}
+
+.dynamic-text {
+    font-weight: bold;
+    /* display: inline-block; */
+    padding: 0px 20px 0px 10px ;
+    border-right: 20px solid rgb(43, 240, 69); /* Typewriter cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: black;
+}
+
+.content{
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.content a{
+    /* text-decoration: none !important; */
+    color: darkslategrey ;
+}
+
+
+footer {
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.footer-content {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p{
+    color: #e1eefa !important;
+}
+
+.footer-content a{
+    text-decoration: none;
+    color: darkgrey;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        height: 6rem;
+        font-size: 2.5rem; /* Adjust size for phones */
+    }
+}
