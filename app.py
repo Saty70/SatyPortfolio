@@ -1,9 +1,16 @@
 from flask import Flask, render_template, jsonify, request, url_for
+from flask_cors import CORS
 import requests
 from passkey import GITHUB_TOKEN
 from datetime import datetime
 
+# app = Flask(__name__, template_folder="templates")
 app = Flask(__name__)
+# @app.route('/')
+# def main():
+#     return "<h1> hello Saty </h1>"
+
+CORS(app)
 
 GITHUB_API_URL = "https://api.github.com/users/{}/repos"
 
@@ -11,15 +18,19 @@ GITHUB_COMMITS_URL = "https://api.github.com/repos/{}/{}/commits"
 
 @app.route('/')
 def home():
-    # Internal request to the /recent-repos/<username> route
-    repos_url = url_for('get_recent_repos')
-    response = requests.get(request.host_url[:-1] + repos_url)  # Making an internal call
+    # # Internal request to the /recent-repos/<username> route
+    # repos_url = url_for('get_recent_repos')
+    # # response = requests.get('/recent-repos')  # Making an internal call
+    # response = requests.get(request.host_url[:-1] + repos_url)  # Making an internal call
+    # # response = requests.get(request.host_url[:-1] + repos_url, allow_redirects=False)
     
-    if response.status_code == 200:
-        repos_data = response.json()
-    else:
-        repos_data = []
+    # if response.status_code == 200:
+    #     repos_data = response.json()
+    # else:
+    #     repos_data = []
 
+
+    repos_data = get_recent_repos().json
     # Limit the number of projects to 3 for the home route
     limited_repos_data = repos_data[:3]
 
@@ -28,18 +39,24 @@ def home():
               "💞️ I'm looking to collaborate on Web Developement and Machine Learning projects",
                "📫 Connect with me : " ]
     return render_template('index.html', person = "Satyam", intros=intros, repos=limited_repos_data )
+    # return render_template('index.html', person = "Satyam", intros=intros)
 
 @app.route('/project')
 def project():
     
-    # Internal request to the /recent-repos/<username> route
-    repos_url = url_for('get_recent_repos')
-    response = requests.get(request.host_url[:-1] + repos_url)  # Making an internal call
+    # # Internal request to the /recent-repos/<username> route
+    # repos_url = url_for('get_recent_repos')
+    # response = requests.get(request.host_url[:-1] + repos_url)  # Making an internal call
+    # # response = requests.get('recent-repos/')  # Making an internal call
+    # # print(request.host_url[:-1]  + repos_url)
+    # # response = requests.get(request.host_url[:-1] + repos_url, allow_redirects=False)
     
-    if response.status_code == 200:
-        repos_data = response.json()
-    else:
-        repos_data = []
+    # if response.status_code == 200:
+    #     repos_data = response.json()
+    # else:
+    #     repos_data = []
+
+    repos_data = get_recent_repos().json
 
     return render_template('project.html', message='Project', repos=repos_data)
 
@@ -48,29 +65,31 @@ def contact():
     social_links = [
         {
             'url': 'https://www.linkedin.com/in/satyamkumarprasad/',
-            'icon_class': 'fa-brands fa-linkedin',
-            'color': '#2f4f4f'
+            'icon_class': 'fa-brands fa-linkedin fa-2xl'
         },
         {
             'url': 'https://github.com/Saty70',
-            'icon_class': 'fa-brands fa-github',
-            'color': '#2f4f4f'
+            'icon_class': 'fa-brands fa-github fa-2xl'
         },
         {
             'url': 'https://www.instagram.com/saty.ikp',
-            'icon_class': 'fa-brands fa-square-instagram',
+            'icon_class': 'fa-brands fa-square-instagram fa-2xl'
         },
         {
             'url': 'https://x.com/Saty_ikp',
-            'icon_class': 'fa-brands fa-square-x-twitter',
+            'icon_class': 'fa-brands fa-square-x-twitter fa-2xl'
         },
         {
             'url': 'https://stackoverflow.com/users/17837709/satyam-kumar-prasad',
-            'icon_class': 'fa-brands fa-stack-overflow',
+            'icon_class': 'fa-brands fa-stack-overflow fa-2xl'
+        },
+        {
+            'url': 'https://medium.com/@Saty70',
+            'icon_class': 'fa-brands fa-medium fa-2xl'
         },
         {
             'url': 'https://open.spotify.com/user/317r2ag4ftz5upb5vo6x4i76hph4?si=e09dd1c8b5014ea5&nd=1&dlsi=1182da7011024f82',
-            'icon_class': 'fa-brands fa-spotify',
+            'icon_class': 'fa-brands fa-spotify fa-2xl'
         }
     ]
     
@@ -79,51 +98,20 @@ def contact():
 @app.route('/about')
 def about():
     # Fetch the experience data from the /experience endpoint
-    response = requests.get('http://127.0.0.1:5000/experience')  # Adjust the URL if needed
+    # repos_url = url_for('experience')
+    # response = requests.get(request.host_url[:-1] + repos_url)
+    # response = requests.get('https://127.0.0.1:5000/' + repos_url)  # Making an internal call
+    # response = requests.get('127.0.0.1/experience')  # Adjust the URL if needed
     
-    if response.status_code == 200:
-        experience_data = response.json()  # Get the experience data in JSON format
-    else:
-        experience_data = []
+    # if response.status_code == 200:
+    #     experience_data = response.json()  # Get the experience data in JSON format
+    # else:
+    #     experience_data = []
+
+    experience_data = experience()
 
     # Pass the experience data to the about.html template
     return render_template('about.html', message='About', experiences=experience_data)
-
-
-# @app.route('/recent-repos/', methods=['GET'])
-# def get_recent_repos():
-#     # Fetch the repositories for the given GitHub user
-#     response = requests.get(GITHUB_API_URL.format('Saty70'))
-
-#     if response.status_code != 200:
-#         return response.json()
-#         # return jsonify({"error": "User not found"}), 404
-    
-#     repos = response.json()
-
-#     # Sort repos by creation date in descending order (most recent first)
-#     sorted_repos = sorted(repos, key=lambda x: x['created_at'], reverse=True)
-
-#     # Get the most recent 10 repos
-#     recent_repos = sorted_repos[:10]
-
-#     # Prepare the response data
-#     recent_repos_info = [
-#         {
-#             'name': repo['name'],
-#             'html_url': repo['html_url'],
-#             'created_at': repo['created_at'],
-#             'updated_at' : repo['updated_at'],
-#             'full_name' : repo['full_name'],
-#             'forks_count' : repo['forks_count'],
-#             'language': repo['language'],
-#             'description': repo['description']
-#         }
-#         for repo in recent_repos
-#     ]
-
-#     # return recent_repos_info
-#     return recent_repos_info
 
 def get_commit_count(owner, repo):
     """Get the total number of commits for a given repository."""
@@ -155,7 +143,7 @@ def parse_date(date_string):
             return None
         
 
-@app.route('/recent-repos/', methods=['GET'])
+# @app.route('/recent-repos', methods=['GET', 'POST'])
 def get_recent_repos():
     username = 'Saty70'
 
@@ -235,7 +223,7 @@ def calculate_months(experience):
 
     return experiences_with_months
 
-@app.route('/experience', methods=['GET'])
+# @app.route('/experience', methods=['GET'])
 def experience():
     experience_data = [
         {'title': 'Head of Web Development', 'desp': 'GDG on Campus - National Forensic Sciences University Delhi · Full-time', 'duration': 'Sep 2024 - Present · ', 'Location': 'New Delhi, Delhi, India'},
@@ -248,3 +236,6 @@ def experience():
 
     # Return the updated experience data with total months as JSON
     return calculated_experiences
+
+if __name__ == '__main__':
+    app.run(debug=True)
